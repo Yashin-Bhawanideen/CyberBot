@@ -1,0 +1,30 @@
+﻿<Window x:Class="CyberBotGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CyberBotGUI"
+        mc:Ignorable="d"
+        Title="CyberBot" Height="450" Width="800">
+    <Grid Background="#1E1E1E" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- Chat log -->
+            <RowDefinition Height="Auto" />
+            <!-- Input + Button -->
+        </Grid.RowDefinitions>
+
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Name="ChatScrollViewer" Margin="10">
+            <TextBlock x:Name="BotOutput" TextWrapping="Wrap"
+                   Foreground="Lime" FontSize="16" Margin="10"
+                   VerticalAlignment="Top"  />
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="UserInput" FontSize="14" Width="600" Height="30" Margin="0,0,10,0"/>
+            <Button Content="Send" Width="80" Height="30" Click="SendButton_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
